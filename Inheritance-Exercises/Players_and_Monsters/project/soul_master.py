@@ -1,7 +1,7 @@
-from Players_and_Monsters.project.hero import Hero
+from Players_and_Monsters.project.dark_wizard import DarkWizard
 
 
-class SoulMaster(Hero):
+class SoulMaster(DarkWizard):
 
-    def __init__(self, name, level):
-        Hero.__init__(self, name, level)
+    def __init__(self, username, level):
+        DarkWizard.__init__(self, username, level)
