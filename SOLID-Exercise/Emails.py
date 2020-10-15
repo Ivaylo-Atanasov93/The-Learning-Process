@@ -33,7 +33,7 @@ class IEmail(object):
 
 class Email(IEmail):
 
-    def __init__(self, protocol, ):
+    def __init__(self, protocol):
         self.protocol = protocol
         self.__sender = None
         self.__receiver = None
