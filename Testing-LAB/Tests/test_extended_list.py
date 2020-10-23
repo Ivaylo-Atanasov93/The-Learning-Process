@@ -2,6 +2,7 @@ import unittest
 
 from Code_for_Testing.Extended_List import IntegerList
 
+
 class TestExtendedList(unittest.TestCase):
     def test_ListAddOperation_whenAddMethodCalled_shouldAddElement(self):
         array = IntegerList(2, 4, 6, 7, 2, 5, 6, 5)
@@ -77,6 +78,7 @@ class TestExtendedList(unittest.TestCase):
     def test_ListGetDataOperation_whenGetDataMethodIsCalled_shouldReturnTheList(self):
         array = IntegerList(2, 4, 6, 7, 2, 5, 6, 5)
         self.assertEqual([2, 4, 6, 7, 2, 5, 6, 5], array.get_data())
+
 
 if __name__ == "__main__":
     unittest.main()
