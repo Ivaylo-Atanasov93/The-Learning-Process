@@ -7,31 +7,35 @@ class CustomList:
     def __init__(self, *args):
         self.elements = list(args)
 
-    def append(self, element):
-        self.elements = self.elements + [element]
-        return self.elements
-
-    def remove(self, index):
+    def __verify_index(self, index):
         try:
-            value = self.elements[index]
-            del self.elements[index]
-            return value
-        except IndexError as ex:
-            raise CustomListIndexException(
-                f'MyCustomList does not found element on this index - {index}\nThe original exception was - {ex}')
-        except TypeError:
-            raise CustomListTypeException(f'Index must be of type int, got {type(index)} instead')
-
-    def get(self, index):
-        try:
-            value = self.elements[index]
-            return value
+            if not self.elements:
+                return
+            elif index > 0:
+                self.elements[index - 1]
+            else:
+                self.elements[index]
         except IndexError as ex:
             raise CustomListIndexException(
                 f'MyCustomList does not found element on this index - {index}\nThe original exception was - {ex}')
         except TypeError as ex:
             raise CustomListTypeException(
                 f'Index argument does not match the supported type. Should be integer, got {type(index)} instead.')
+
+    def append(self, element):
+        self.elements = self.elements + [element]
+        return self.elements
+
+    def remove(self, index):
+        self.__verify_index(index)
+        value = self.elements[index]
+        del self.elements[index]
+        return value
+
+    def get(self, index):
+        self.__verify_index(index)
+        value = self.elements[index]
+        return value
 
     def extend(self, iterable):
         if not isinstance(iterable, Iterable):
@@ -40,9 +44,7 @@ class CustomList:
         return self.elements
 
     def insert(self, index, element):
-        if not isinstance(index, int):
-            CustomListTypeException(
-                f'Index argument does not match the supported type. Should be integer, got {type(index)} instead.')
+        self.__verify_index(index)
         self.elements = self.elements[0:index] + [element] + self.elements[index:]
         return self.elements
 
@@ -141,4 +143,7 @@ class CustomList:
         return self.elements.index(element)
 
     def __repr__(self):
-        return f'{self.elements}'
+        return str(self)
+
+    def __str__(self):
+        return f"{';'.join([repr(el) for el in self.elements])}"
