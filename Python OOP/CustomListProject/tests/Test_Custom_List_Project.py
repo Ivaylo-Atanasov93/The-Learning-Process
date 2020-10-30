@@ -218,9 +218,9 @@ class TestCustomList(CustomListTestsBase):
         index_to_insert = 4
         value_to_insert = -3
         cl = self.setup_list(1, 2, 3, 4)
-        with self.assertRaises(CustomListIndexException) as context:
-            cl.insert(index_to_insert, value_to_insert)
-        self.assertIsNotNone(context.exception)
+        result = cl.insert(index_to_insert, value_to_insert)
+        self.assertEqual([1, 2, 3, 4, value_to_insert], result)
+        self.assertEqual([value_to_insert, 4, 3, 2, 1], cl.reverse())
 
     def test_customListInsert_whenIndexIsLenMinus1_shouldInsertItAndReturnTheList(self):
         index_to_insert = -5
@@ -243,9 +243,9 @@ class TestCustomList(CustomListTestsBase):
         index_to_insert = 3
         value_to_insert = -3
         cl = self.setup_list()
-        with self.assertRaises(CustomListIndexException) as context:
-            cl.insert(index_to_insert, value_to_insert)
-        self.assertIsNotNone(context.exception)
+        result = cl.insert(index_to_insert, value_to_insert)
+        self.assertEqual([value_to_insert], result)
+        self.assertEqual([value_to_insert], cl.reverse())
 
     def test_customListInsert_whenIndexIsLessThanNegativeLen_shouldRaiseException(self):
         list_len = 4

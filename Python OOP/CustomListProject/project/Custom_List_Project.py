@@ -7,12 +7,15 @@ class CustomList:
     def __init__(self, *args):
         self.elements = list(args)
 
-    def __verify_index(self, index):
+    def __verify_index(self, index, shouldIncludePlusOne=False):
         try:
-            if not self.elements:
-                return
-            elif index > 0:
-                self.elements[index - 1]
+            if shouldIncludePlusOne:
+                if not self.elements:
+                    return
+                elif index > 0:
+                    self.elements[index - 1]
+                else:
+                    self.elements[index]
             else:
                 self.elements[index]
         except IndexError as ex:
@@ -44,7 +47,7 @@ class CustomList:
         return self.elements
 
     def insert(self, index, element):
-        self.__verify_index(index)
+        self.__verify_index(index, shouldIncludePlusOne=True)
         self.elements = self.elements[0:index] + [element] + self.elements[index:]
         return self.elements
 
