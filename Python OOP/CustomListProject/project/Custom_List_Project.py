@@ -109,10 +109,9 @@ class CustomList:
         for element in self.elements:
             if isinstance(element, int) or isinstance(element, float):
                 result += element
-                continue
-            try:
+            elif hasattr(element, '__len__'):
                 result += len(element)
-            except TypeError:
+            else:
                 raise CustomListSumException(
                     f'Please provide a len method to custom objects if you want to sum the elements.')
         return result
