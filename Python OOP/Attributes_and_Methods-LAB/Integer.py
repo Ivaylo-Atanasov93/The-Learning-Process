@@ -34,10 +34,19 @@ class Integer:
     def __str__(self):
         return f'{self.value}'
 
-first_num = Integer(10)
-second_num = Integer.from_roman("XVIII")
-print(second_num)
-print(Integer.from_float("2.6"))
-print(Integer.from_string(2.6))
-print(first_num.add(second_num))
+# first_num = Integer(10)
+# second_num = Integer.from_roman("XVIII")
+# print(second_num)
+# print(Integer.from_float("2.6"))
+# print(Integer.from_string(2.6))
+# print(first_num.add(second_num))
 
+first_integer = Integer(10)
+second_integer = Integer(12)
+result = first_integer.add(second_integer)
+print(result)
+
+first_integer = Integer(10)
+second_integer2 = 12
+result2 = first_integer.add(second_integer2)
+print(result)
