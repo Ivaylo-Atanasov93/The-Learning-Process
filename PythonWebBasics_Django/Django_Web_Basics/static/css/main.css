@@ -1,0 +1,21 @@
+h1 {
+    color: cadetblue;
+    font-family: sans-serif;
+}
+
+ul {
+    color: coral;
+    font-family: sans-serif;
+}
+
+.highlighted{
+    text-decoration: underline;
+}
+
+.odd{
+    font-size: 1.3em;
+}
+
+.even{
+    font-size: 0.8em;
+}

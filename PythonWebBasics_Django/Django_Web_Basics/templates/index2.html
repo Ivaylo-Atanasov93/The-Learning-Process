@@ -1,0 +1,24 @@
+{% extends 'shared/base.html' %}
+
+{% load static %}
+
+{% block page_styles %}
+    <link rel="stylesheet" href="{% static 'css/css.css' %}"/>
+{% endblock %}
+
+{% block site_title %}
+    Index page with Class Based View
+{% endblock %}
+
+{% block site_main_content %}
+    <h1>It Works from ClassView!</h1>
+    {{ users }}
+    {{ object_lsit }}
+    <ul>
+        {% for user in users %}
+            <li>
+                {{ user.username }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

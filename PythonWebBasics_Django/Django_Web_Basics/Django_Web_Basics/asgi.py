@@ -1,5 +1,5 @@
 """
-ASGI config for Django_Course_Introduction project.
+ASGI config for Django_Web_Basics project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Django_Course_Introduction.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Django_Web_Basics.settings')
 
 application = get_asgi_application()
