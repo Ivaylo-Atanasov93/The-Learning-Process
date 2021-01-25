@@ -1,12 +1,14 @@
 from django.contrib.auth.models import User
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views.generic import ListView
 
 from Django_Web_Basics_2.models import Game
 
+
 def something(request):
     return HttpResponse("<u>It works!</>")
+
 
 def index(request):
     title = 'Softuni Django101'
@@ -14,7 +16,7 @@ def index(request):
     context = {
         'title': title,
         'users': users,
-        #'users': [],
+        # 'users': [],
     }
     return render(request, 'index.html', context)
 
@@ -36,3 +38,14 @@ class UsersListView(ListView):
 class GamesListView(ListView):
     model = Game
     template_name = 'games.html'
+
+
+def methods_demo(request):
+    context = {
+        'name': 'Ivaylo',
+        'age': 27,
+    }
+    if request.content_type == 'application/json':
+        return JsonResponse(context)
+    return render(request, 'methods_demo.html', context)
+
