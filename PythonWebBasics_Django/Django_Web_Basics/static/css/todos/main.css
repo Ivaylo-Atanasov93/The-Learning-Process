@@ -1,0 +1,41 @@
+ul, li, h1, h2, p{
+    font-family: sans-serif;
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.root{
+    text-align: center;
+}
+
+.todo-list{
+    font-family: sans-serif;
+}
+
+.todo-list-item{
+    font-family: sans-serif;
+    border: 1px solid green;
+    padding: 10px 0;
+}
+
+.todo-description{
+    margin-top: 15px;
+}
+
+.todo-title{
+
+}
+
+.red-text{
+    color: red;
+}
+
+.green-text{
+    color: green;
+}
+
+.collapsed .collapsable{
+    display: none;
+}

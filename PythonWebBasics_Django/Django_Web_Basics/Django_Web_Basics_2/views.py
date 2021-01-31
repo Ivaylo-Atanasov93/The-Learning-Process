@@ -1,10 +1,11 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
 
-from Django_Web_Basics_2.models import Game
-
+from Django_Web_Basics_2.models.game import Game
+from Django_Web_Basics_2.models.person import Person
+from Django_Web_Basics_2.models.player import Player
 
 def something(request):
     return HttpResponse("<u>It works!</>")
@@ -13,9 +14,12 @@ def something(request):
 def index(request):
     title = 'Softuni Django101'
     users = User.objects.all()
+    games = Game.objects.get_all_with_players_count()
+
     context = {
         'title': title,
         'users': users,
+        'games': games
         # 'users': [],
     }
     return render(request, 'index.html', context)
@@ -49,3 +53,13 @@ def methods_demo(request):
         return JsonResponse(context)
     return render(request, 'methods_demo.html', context)
 
+def raises_exception(request):
+    raise Exception('Raises')
+
+def create_game(request):
+    game = Game(
+        name='LoL',
+        level_of_difficulty=Game.HARD,
+    )
+    game.save()
+    return redirect(request, '')
