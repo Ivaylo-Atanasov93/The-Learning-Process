@@ -1,0 +1,12 @@
+.description, .calendar {
+    padding: 5%;
+    display: table-cell;
+}
+
+.description {
+    width: 50%;
+}
+
+.calendar {
+    width: 50%;
+}

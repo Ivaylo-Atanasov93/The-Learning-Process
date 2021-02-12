@@ -1,0 +1,112 @@
+.site-nav {
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0;
+    padding: 15px;
+}
+
+.site-footer {
+    background-color: rgba(255, 255, 255, 0.3);
+    position: relative;
+    padding: 15px;
+    height: 150px;
+}
+
+body {
+    background: url("/static/css/backgrounds/3.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.list-horizontal-nav .list-item-nav {
+    display: inline-block;
+}
+
+.list-horizontal-footer .list-item-footer {
+    display: inline-block;
+    width: 5%;
+}
+
+.nav-button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 25px;
+    background-color: #014b00;
+    border-style: none;
+    color: white;
+    border-radius: 15px;
+}
+
+.nav-button:hover {
+    background-color: rgba(1, 75, 0, 0.71);
+}
+
+.foot-button {
+    background-color: transparent;
+    border-style: none;
+    font-size: 40px;
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.youtube {
+    color: #FF0000;
+}
+
+.linkedin {
+    color: #0e76a8;
+}
+
+.email {
+    color: rgb(40,134,0);
+}
+
+
+.banner {
+    color: white;
+}
+
+.description {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-style: solid;
+    border-color: #014b00;
+    border-left: none;
+    border-right: none;
+    color: white;
+}
+
+.calendar {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-style: solid;
+    border-color: #014b00;
+    border-left: none;
+    border-right: none;
+}
+
+.appointment-block {
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 40px;
+    padding: 20px;
+}
+
+.form-control {
+    width: 450px;
+    font-size: 30px;
+    padding: 15px;
+    margin: 15px;
+}
+
+.message-control {
+    width: 450px;
+    height: 300px;
+    font-size: 30px;
+    padding: 15px;
+    margin: 15px;
+}
