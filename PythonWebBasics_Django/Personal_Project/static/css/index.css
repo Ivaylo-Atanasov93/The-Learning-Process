@@ -4,9 +4,14 @@
 }
 
 .description {
-    width: 50%;
+    width: 60%;
 }
 
 .calendar {
-    width: 50%;
+    width: 40%;
+}
+
+#id_name, #id_surname, #id_phone, #id_email, #id_day, #id_time, #id_message {
+    font-size: 25px;
+    display: block;
 }

@@ -68,20 +68,13 @@
                 </p>
             </div>
             <div class="calendar">
-
+                <h2>Book a lesson with me</h2>
                 <div class="appointment-block">
-                    <h1>Book an appointment:</h1><br><br>
-                    <input type="text" name="your-name" class="form-control" placeholder="Your name here:" required>
-                    <input type="text" name="your-surname" class="form-control" placeholder="Your surname here:"
-                           required>
-                    <input type="tel" name="your-phone" class="form-control" placeholder="Your phone here:" required>
-                    <input type="email" name="your-email" class="form-control" placeholder="Your email here:" required>
-                    <input type="text" name="your-message" class="message-control" placeholder="Your message here:"
-                           required>
-                    <input type="radio"
-                    <center>
-                        <button class="nav-button">Submit</button>
-                    </center>
+                    <form method="post" action={% url 'booking' %}>
+                        {% csrf_token %}
+                        {{ lesson_booking }}
+                        <button class="nav-button" type="submit">Book</button>
+                    </form>
                 </div>
             </div>
         </header>
